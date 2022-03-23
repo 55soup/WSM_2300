@@ -5,14 +5,35 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>헬로, 월드!</title>
+    <style>
+        /* 우선순위: 포괄 < 구체 
+           3반 다 오른쪽으로! 유진이는 왼쪽으로 가 => 유진이만 왼쪽으로 감.*/
+           /* 우선순위: class < id <<< !important*/
+           /* 우선순위: 같은 급일 때, 위 < 아래 코드*/
+        * {
+            color:gray;  /*property : value*/
+        }
+        li {
+            color:tomato;
+        }
+        #leader { /* # : id */
+            color:skyblue;
+        }
+        .korea { /* . : class */
+            color:blueviolet !important;
+        }
+        .lemon{
+            color:lemonchiffon;
+        }
+    </style>
 </head>
 <body>
     <ul>
         <li class="korea">god</li>  <!--alt + ctrl = 여러개 선택-->
-        <li class="korea LA" id="leader">박준형</li>
+        <li class="korea" id="leader">박준형</li>  <!--클래스의 구분은 띄어쓰기로 한다.-->
         <li class="korea">안데니</li>
         <li class="korea" style="color: darkolivegreen;">윤계상</li>
-        <li class="korea">손호영</li>
+        <li class="korea lemon">손호영</li>
         <li class="korea">김태우</li>
     </ul>
     <img src = "https://t2.daumcdn.net/thumb/R720x0.fjpg/?fname=http://t1.daumcdn.net/brunch/service/user/2YcI/image/rfLrWjIpN7UYjM9FbKIXTfMlLs4.jpg">
