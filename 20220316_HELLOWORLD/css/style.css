@@ -1,0 +1,19 @@
+ /* 우선순위: 포괄 < 구체 
+3반 다 오른쪽으로! 유진이는 왼쪽으로 가 => 유진이만 왼쪽으로 감.*/
+/* 우선순위: Tag < class < id <<< !important*/
+/* 우선순위: 같은 급일 때, 위 < 아래 코드*/
+* {
+    color:gray;  /*property : value*/
+}
+li {
+    color:tomato;
+}
+#leader { /* # : id */
+    color:skyblue;
+}
+.korea { /* . : class */
+    color:blueviolet !important;
+}
+.lemon{
+    color:lemonchiffon;
+}
