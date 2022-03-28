@@ -1,39 +1,46 @@
- /* 우선순위: 포괄 < 구체 
+/* 우선순위: 포괄 < 구체 
 3반 다 오른쪽으로! 유진이는 왼쪽으로 가 => 유진이만 왼쪽으로 감.*/
 /* 우선순위: Tag < class < id <<< !important*/
 /* 우선순위: 같은 급일 때, 위 < 아래 코드*/
 * {
-    color:gray;  /*property : value*/
+  color: gray; /*property : value*/
 }
-body > ul > li{
-    color:goldenrod;
+body > ul > li {
+  color: goldenrod;
 }
-body > li, h6{
-    /* >: 자식, 띄어쓰기: 자손 */
-    color:tomato;
+body > li,
+h6 {
+  /* >: 자식, 띄어쓰기: 자손 */
+  color: tomato;
 }
-#leader { /* # : id */
-    color:skyblue;
+#leader {
+  /* # : id */
+  color: skyblue;
 }
-.korea { /* . : class */
-    color:blueviolet !important;
+.korea {
+  /* . : class */
+  color: blueviolet !important;
 }
-.lemon{
-    color:lemonchiffon;
+.lemon {
+  color: lemonchiffon;
 }
-h1+h2 {
-    /* 마주하는 첫째 자매 */
-    background-color: skyblue;
+h1 + h2 {
+  /* 마주하는 첫째 자매 */
+  background-color: skyblue;
 }
-h2~h3{
-    /* 마주하는 모든 자매 */
-    background-color: aqua;
+h2 ~ h3 {
+  /* 마주하는 모든 자매 */
+  background-color: aqua;
 }
-ul:nth-child(4) > li:nth-child(2){
-    /* n번째 자식 */
-    text-decoration: underline;
+body > ul > ul:nth-child(4) > li:nth-child(2) {
+  /* nth-child(n): n번째 자식 */
+  /* first-child: 첫째 */
+  /* last-child: 막내 */
+  text-decoration: underline;
 }
-[type] {
-    /* HTML 태그 속성="값" */
-    background-color: chocolate;
+[type="password"] {
+  /* HTML 태그 속성="값" */
+  background-color: chocolate;
 }
+
+/* copy > copy select : 선택자 복사.*/
