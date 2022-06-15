@@ -132,6 +132,7 @@ nav i { /*밥 흰색*/
         top: 44px; /*44px은 아이콘을 누를 때 이 크기가 적당하다고 함*/
         height: 0; /* overflow: hidden과 함께 메뉴 안 보이게하가*/
         overflow: hidden; /* 넘치는 요소를 감춤. */
+        transition: 0.5s;
     }
     .nav-item {
         padding : 0.5rem 0; /*위 아래 여백, 좌, 우 여백 0*/
