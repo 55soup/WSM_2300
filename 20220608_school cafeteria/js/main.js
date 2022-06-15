@@ -1,18 +1,20 @@
 // show/hide menu: toggle menu
 const toggleMenu = (toggleID, navListId) => {
-    //html -> js
-    const toggle = document.getElementById(toggleID);
-    const navList = document.getElementById(navListId);
+    const toggleMenu = function (toggleID, navListId){
+        //html -> js
+        const toggle = document.getElementById(toggleID);
+        const navList = document.getElementById(navListId);
+        
+        const clickHandler  = function (){
+            //show/hidde menu: .show-menu
+            navList.classList.toggle('show-menu')
+        }
 
-    const clickHandler = () => {
-        //show/hidde menu: .show-menu
-        navList.classList.toggle('show-menu')
-    }
-
-    if(toggle && navList){
-        //toggle click
-        toggle.addEventListener('click', clickHandler);
-        //show/hide menu : show-menu
+        if(toggle && navList){
+            //toggle click
+            toggle.addEventListener('click', clickHandler);
+            //show/hide menu : show-menu
+        }
     }
 }
 toggleMenu('nav-toggle', 'nav-list');
