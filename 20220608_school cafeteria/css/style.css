@@ -1,32 +1,34 @@
 /* Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap');
-/* Varialbes CSS */
-:root{
-    /* color */
-    --first-color: hsl(160, 100%, 25%);
-    --first-color-bright: hsl(160, 100%, 40%);
-    --second-color: hsl(339, 77%, 59%);
-    --third-color: hsl(42, 87%, 52%);
-    --title-color: hsl(160, 0%, 0%);
-    --text-color: hsl(160, 0%, 47%);
-    --body-color: #fff;
-    --container-color: #fff;
-    /* font */
-    --body-font: 'Noto Sans KR', sans-serif;
-    --biggest-font-size: 2.25rem;  /* 36px */
-    --h1-font-size: 2rem;
-    --h1-font-size: 1.5rem;
-    --h1-font-size: 1.25rem;
-    --normal-font-size: 1rem;
-    --smalll-font-size: 0.8rem;
-    --smaller-font-size: 0.75rem;
 
-    /* font weight */
-    --font-medium: 500;
-    --font-bold: 700;
+/* Variable CSS */
+:root {
+    /* color */
+    --first-color : hsl(160, 100%, 25%);
+    --first-color-bright : hsl(160, 100%, 40%);
+    --second-color: hsl(339, 77%, 59%);
+    --third-color:hsl(42, 87%, 52%);
+    --title-color :hsl(160, 0%, 0%);
+    --text-color:hsl(160,0%, 47%);
+    --body-color : #fff;
+    --container-color : #fff;
+
+    /* fotns */
+    --body-font : 'Noto Sans KR', sans-serif;
+    --biggest-font-size:2.25rem; /*기본 값에 2.25배!!! = 36px 기본값 : 16px*/
+    --h1-font-size : 2rem;
+    --h2-font-size : 1.5rem;
+    --h3-font-size : 1.25rem;
+    --normar-font-size : 1rem;
+    --small-font-size : 0.8rem;
+    --smaller-font-size : 0.75rem;
+    
+    /* fint weight */
+    --font-medium : 500;
+    --font-bold : 700;
 
     /* z-index */
-    --z-index: 100;
+    --z-index :  100;
 
 }
 
@@ -36,32 +38,107 @@
     margin: 0;
     padding: 0;
 }
-body{
+body {
     position: relative;
     font-family: var(--body-font);
-    font-size: var(--normal-font-size);
+    font-size: var(--normar-font-size);
     background-color: var(--body-color);
     color: var(--text-color);
+
 }
 h1,
 h2,
-h3{
+h3 {
     font-weight: var(--font-bold);
     color: var(--title-color);
-
 }
-ul{
+ul {
     list-style: none;
 }
-a{
+a {
     text-decoration: none;
+    color: var(--title-color);
 }
+img {
+    /*display: block; 줄바꿈이 되도록!! 옆에 아무도 없게 / div가 갖게 되는 기본값 , 가로 한 줄 다 차지*/
+    max-width: 100%; /*이미지 보다 창 크기가 작아져도 이미지를 다 유지하면서 축소하자*/
+    height: auto;
+}
+
+header {
+    background-color: var(--first-color);
+}
+
 /* nav */
-.conatiner{
+.nav-container {
     margin-left: 1rem;
     margin-right: 1rem;
 }
+
+nav {
+    height: 44px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-toggle {
+    display: none;
+    color: #fff;
+    /* visibility: hidden; /*공간을 차지함*/
+}
+
+.nav-list {
+    display: flex;
+    column-gap: 0.75rem; /*12px; */
+
+}
+
+nav i { /*밥 흰색*/
+    color: #fff;
+    font-size: 1.25rem; /*아이콘 1.25배*/
+}
+
+.nav-item a {
+    color: #fff;
+}
+
+.nav-link {
+    display: block; /* 한 줄 전체를 차지해서 링크 동작*/
+}
+
+
 /* breakpoints */
-/* 2k & 4k */
+/*2K & 4K*/
 
 /* mobile */
+@media screen and (max-width : 600px) { /*시험문제*/
+    .nav-toggle {
+        display: block; /*보이게*/
+        position: absolute;
+        cursor: pointer;
+    }
+
+    .nav-logo {
+        margin : 0 auto; /*위 아래 : 0, 좌, 우 : auto 똑같은 여백 즉, 가운데 정렬*/
+    }
+
+    .nav-list {
+        flex-direction: column;
+        align-items: center;
+        position: absolute; /*절댓값 (왼)0, (오)0*/
+        background-color: #2f2f2f;   
+        left: 0;
+        right: 0; /* width: 100%; */
+        top: 44px; /*44px은 아이콘을 누를 때 이 크기가 적당하다고 함*/
+        height: 0; /* overflow: hidden과 함께 메뉴 안 보이게하가*/
+        overflow: hidden; /* 넘치는 요소를 감춤. */
+    }
+    .nav-item {
+        padding : 0.5rem 0; /*위 아래 여백, 좌, 우 여백 0*/
+        border-bottom: 1px solid #fff; /*아래줄 밑줄*/
+        text-align: center;
+    }
+
+
+}
